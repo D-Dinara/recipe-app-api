@@ -59,6 +59,11 @@ class Recipe(models.Model):
     link = models.CharField(max_length=255, blank=True)
     tags = models.ManyToManyField('Tag')
     ingredients = models.ManyToManyField('Ingredient')
+    image = models.CharField(
+        max_length=255,
+        blank=True,
+        default='https://picsum.photos/200'  # Default image URL
+    )
 
     def __str__(self):
         return self.title
